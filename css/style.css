@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    height: 100vh;
+    background: rgb(2,225,251);
+    background: linear-gradient(159deg, rgba(2,225,251,1) 0%, rgba(45,119,253,1) 100%); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.formulario {
+    width: 30vw; 
+    display: flex;
+    justify-content: center; 
+    background-color: aliceblue; 
+    border-radius: 10px; 
+
+
+}
+
+.formStyling {
+    width: 25vw;
+}
+
+.formItem {
+    display: flex;
+    flex-direction: column; 
+    padding: 10px;
+    position: relative;
+
+} 
+
+.formItem .fa-circle-check {
+    position: absolute;
+    top: 45px; 
+    right: 20px;
+    color: green;
+    visibility: hidden;
+}
+
+.formItem .fa-circle-xmark {
+    color: red; 
+    position: absolute;
+    top: 45px; 
+    right: 20px;
+    visibility: hidden;
+    
+} 
+
+.formItem.sucess .fa-circle-check{
+    visibility: visible;
+} 
+
+.formItem.sucess input {
+    border: 1px solid green;
+}	
+
+.formItem.fail .fa-circle-xmark{
+    visibility: visible;
+} 
+
+.formItem.fail input {
+    border: 1px solid red;
+} 
+
+.error {
+    color: red;
+    
+}
+
+.formulario input {
+    padding: 20px;
+
+}
+
+.formulario button { 
+    margin-top: 15px 0 15px 0;
+    padding: 15px; 
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer; 
+    background-color: rgb(2,225,251);
+}
