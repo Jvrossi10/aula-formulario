@@ -48,19 +48,36 @@ form .addEventListener('submit',  (e) =>{
             mensagemError.push ("A senha deve ter no máximo 15 caracteres!");
             error[2].innerText = mensagemError;
             formItem[2].classList.add('fail');
-        }
-        else if (password.value != confirmPassword.value) {
+        } 
+        else if (!/[A-Z]/.test(password.value)) { 
             e.preventDefault();
-            mensagemError.push ("As senhas não conferem!");
+            mensagemError.push ("A senha deve conter pelo menos uma letra maiúscula, um número e um caracter especial (-, *, #, >)!"); 
             error[2].innerText = mensagemError;
-            formItem[2].classList.add('fail'); 
-            error[3].innerText = mensagemError;
-            formItem[3].classList.add('fail');
-        }
+            formItem[2].classList.add('fail');
+        } 
+        else if (!/[0-9]/.test(password.value)) { 
+            e.preventDefault();
+            mensagemError.push ("A senha deve conter pelo menos uma letra maiúscula, um número e um caracter especial (-, *, #, >)!"); 
+            error[2].innerText = mensagemError;
+            formItem[2].classList.add('fail');
+        } 
+        else if (!/[^A-Za-z0-9]/.test(password.value)) {
+            e.preventDefault();
+            mensagemError.push ("A senha deve conter pelo menos uma letra maiúscula, um número e um caracter especial (-, *, #, >)!");
+            error[2].innerText = mensagemError;
+            formItem[2].classList.add('fail');
+        } 
         else {
             formItem[2].classList.remove('fail');
             error[2].innerText = null; 
             formItem[2].classList.add('sucess');
+        }
+        
+        if (password.value != confirmPassword.value) {
+            e.preventDefault();
+            mensagemError.push ("As senhas devem ser iguais!");
+            error[3].innerText = mensagemError;
+            formItem[3].classList.add('fail');
         }
     }
     
